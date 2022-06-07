@@ -1,32 +1,117 @@
 import React from 'react';
-import {StyleSheet, ScrollView, View} from 'react-native';
-import AuthContainer from './components/AuthContainer';
-import BuyAgain from './components/BuyAgain';
-import CategoryList from './components/CategoryList';
-import Delivery from './components/Delivery';
-import ExpressDelivery from './components/ExpressDelivery';
-import FreeDoctor from './components/FreeDoctor';
-import Header from './components/Header';
-import Health from './components/Health';
-import Location from './components/Location';
-import PopularPicks from './components/PopularPicks';
-import Slider from './components/Slider';
+import {StyleSheet, Image} from 'react-native';
+import Home from './components/Home';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
-    <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
-      <Header></Header>
-      <Location></Location>
-      <Delivery></Delivery>
-      <AuthContainer></AuthContainer>
-      <Slider></Slider>
-      <BuyAgain></BuyAgain>
-      <Health></Health>
-      <CategoryList></CategoryList>
-      <FreeDoctor></FreeDoctor>
-      <ExpressDelivery></ExpressDelivery>
-      <PopularPicks></PopularPicks>
-    </ScrollView>
+    <NavigationContainer>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#BD0451',
+          labelStyle: {fontSize: 14, fontWeight: 'bold'},
+        }}>
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({size, focused, color}) => {
+              return (
+                <Image
+                  style={{
+                    width: size,
+                    height: size,
+                    tintColor: focused ? '#BD0451' : null,
+                  }}
+                  source={require('./assets/house.png')}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Home1"
+          component={Home}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({size, focused, color}) => {
+              return (
+                <Image
+                  style={{
+                    width: size,
+                    height: size,
+                    tintColor: focused ? '#BD0451' : null,
+                  }}
+                  source={require('./assets/searchTab.png')}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Home2"
+          component={Home}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({size, focused, color}) => {
+              return (
+                <Image
+                  style={{
+                    width: size,
+                    height: size,
+                    tintColor: focused ? '#BD0451' : null,
+                  }}
+                  source={require('./assets/coupons.png')}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Home3"
+          component={Home}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({size, focused, color}) => {
+              console.log('color: ', color, 'size: ', size);
+              return (
+                <Image
+                  style={{
+                    width: size,
+                    height: size,
+                    tintColor: focused ? '#BD0451' : null,
+                  }}
+                  source={require('./assets/shopping-cart.png')}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Home4"
+          component={Home}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({size, focused, color}) => {
+              return (
+                <Image
+                  style={{
+                    width: size,
+                    height: size,
+                    tintColor: focused ? '#BD0451' : null,
+                  }}
+                  source={require('./assets/more.png')}
+                />
+              );
+            },
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 

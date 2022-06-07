@@ -9,13 +9,13 @@ import {
 import React from 'react';
 import {Rating, AirbnbRating} from 'react-native-ratings';
 
-const PopularPicks = () => {
+const PopularGroceries = () => {
   return (
     <View style={styles.body}>
       <Text style={[styles.text, {marginBottom: 5}]}>
         {' '}
-        <Text style={[styles.text, {color: '#BD0451'}]}>Our Popular</Text>{' '}
-        Picks.
+        <Text style={[styles.text, {color: '#BD0451'}]}>Most Popular</Text>{' '}
+        Groceries
       </Text>
 
       <ScrollView
@@ -138,11 +138,12 @@ const PopularPicks = () => {
   );
 };
 
-export default PopularPicks;
+export default PopularGroceries;
 
 const styles = StyleSheet.create({
   body: {
     // flex: 1,
+    // paddingBottom: '10%',
   },
   text: {
     color: '#000',
