@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, ScrollView, StatusBar} from 'react-native';
+import {StyleSheet, ScrollView, StatusBar, View} from 'react-native';
 import AuthContainer from './AuthContainer';
 import BuyAgain from './BuyAgain';
 import CategoryList from './CategoryList';
@@ -17,23 +17,25 @@ import PopularGroceries from './PopularGroceries';
 
 const App = () => {
   return (
-    <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
+    <View>
       <StatusBar backgroundColor="#BD0451" />
       <Header></Header>
-      <Location></Location>
-      <Delivery></Delivery>
-      <AuthContainer></AuthContainer>
-      <Slider></Slider>
-      <BuyAgain></BuyAgain>
-      <Health></Health>
-      <CategoryList></CategoryList>
-      <FreeDoctor></FreeDoctor>
-      <ExpressDelivery></ExpressDelivery>
-      <PopularPicks></PopularPicks>
-      <CleanHome></CleanHome>
-      <YourBaby></YourBaby>
-      <PopularGroceries></PopularGroceries>
-    </ScrollView>
+      <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
+        <Location></Location>
+        <Delivery></Delivery>
+        <AuthContainer></AuthContainer>
+        <Slider></Slider>
+        <BuyAgain></BuyAgain>
+        <Health></Health>
+        <CategoryList></CategoryList>
+        <FreeDoctor></FreeDoctor>
+        <ExpressDelivery></ExpressDelivery>
+        <PopularPicks></PopularPicks>
+        <CleanHome></CleanHome>
+        <YourBaby></YourBaby>
+        <PopularGroceries></PopularGroceries>
+      </ScrollView>
+    </View>
   );
 };
 
