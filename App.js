@@ -10,9 +10,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: '#BD0451',
-          labelStyle: {fontSize: 14, fontWeight: 'bold'},
+        screenOptions={{
+          tabBarLabelStyle: {
+            fontSize: 14,
+            fontWeight: '500',
+          },
+          tabBarActiveTintColor: '#BD0451',
         }}>
         <Tab.Screen
           name="Home"
@@ -23,8 +26,8 @@ const App = () => {
               return (
                 <Image
                   style={{
-                    width: size,
-                    height: size,
+                    width: focused ? size + 5 : size,
+                    height: focused ? size + 5 : size,
                     tintColor: focused ? '#BD0451' : null,
                   }}
                   source={require('./assets/house.png')}
@@ -42,8 +45,8 @@ const App = () => {
               return (
                 <Image
                   style={{
-                    width: size,
-                    height: size,
+                    width: focused ? size + 5 : size,
+                    height: focused ? size + 5 : size,
                     tintColor: focused ? '#BD0451' : null,
                   }}
                   source={require('./assets/searchTab.png')}
@@ -61,8 +64,8 @@ const App = () => {
               return (
                 <Image
                   style={{
-                    width: size,
-                    height: size,
+                    width: focused ? size + 5 : size,
+                    height: focused ? size + 5 : size,
                     tintColor: focused ? '#BD0451' : null,
                   }}
                   source={require('./assets/coupons.png')}
@@ -77,12 +80,11 @@ const App = () => {
           options={{
             headerShown: false,
             tabBarIcon: ({size, focused, color}) => {
-              console.log('color: ', color, 'size: ', size);
               return (
                 <Image
                   style={{
-                    width: size,
-                    height: size,
+                    width: focused ? size + 5 : size,
+                    height: focused ? size + 5 : size,
                     tintColor: focused ? '#BD0451' : null,
                   }}
                   source={require('./assets/shopping-cart.png')}
@@ -100,8 +102,8 @@ const App = () => {
               return (
                 <Image
                   style={{
-                    width: size,
-                    height: size,
+                    width: focused ? size + 2 : size,
+                    height: focused ? size + 2 : size,
                     tintColor: focused ? '#BD0451' : null,
                   }}
                   source={require('./assets/more.png')}

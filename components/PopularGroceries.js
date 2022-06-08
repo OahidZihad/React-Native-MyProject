@@ -143,7 +143,7 @@ export default PopularGroceries;
 const styles = StyleSheet.create({
   body: {
     // flex: 1,
-    // paddingBottom: '10%',
+    marginBottom: 80,
   },
   text: {
     color: '#000',
